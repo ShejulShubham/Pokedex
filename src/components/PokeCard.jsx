@@ -13,11 +13,11 @@ export default function PokeCard(props) {
 
     const { name, height, abilitites, stats, types, moves, sprites } = data || {};
 
-    const sortedMoves = moves.sort((a, b) => {
+    const sortedMoves = (moves || []).sort((a, b) => {
         if (a.move.name > b.move.name) { return 1 }
         if (a.move.name < b.move.name) { return -1 }
         return 0;
-    })
+    });
 
     const imgList = Object.keys(sprites || {}).filter((val) => {
         if (!sprites[val]) {
