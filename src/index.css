@@ -62,16 +62,16 @@ nav {
   z-index: 10;
 }
 
+nav:not(.open) {
+  display: none;
+}
+
 nav div:first-of-type {
   padding-top: 1rem;
   position: sticky;
   top: 0;
   background: var(--background-primary);
   z-index: 14;
-}
-
-nav:not(.open) {
-  display: none;
 }
 
 nav h1 {
@@ -107,7 +107,7 @@ h3 {
 
 .nav-card-selected {
   background: var(--background-muted);
-  border: 1px solid (--border-primary)
+  border: 1px solid (--border-primary);
 }
 
 .nav-card p:first-of-type {
@@ -180,7 +180,6 @@ h3 {
   margin: 0 auto;
 }
 
-
 .pokemon-move {
   width: 100%;
   flex: 1;
@@ -236,7 +235,6 @@ h3 {
   /* align-items: center;
   justify-content: center; */
   gap: 1rem;
-
 }
 
 @media (min-width: 640px) {
@@ -255,7 +253,6 @@ h3 {
     position: sticky;
     width: fit-content;
     min-width: 200px;
-
   }
 
   nav:not(.open) {

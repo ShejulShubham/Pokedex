@@ -41,7 +41,6 @@ export default function PokeCard(props) {
         if (move in c) {
             setSkill(c[move])
             toast.success("Found move in cache");
-            console.log('Found move in cache');
             return
         }
 
@@ -50,7 +49,6 @@ export default function PokeCard(props) {
             const res = await fetch(moveURL);
             const moveData = await res.json();
             toast.info("fetched move from API");
-            console.log("fetched move from API", moveData);
             const description = moveData?.flavor_text_entries.filter(
                 val => {
                     return val.version_group.name == 'firered-leafgreen'
@@ -93,7 +91,6 @@ export default function PokeCard(props) {
             //read from cache
             setData(cache[selectedPokemon]);
             toast.success("Found pokemon in cache");
-            console.log('Found pokemon in cache')
             return;
         }
 
@@ -110,7 +107,6 @@ export default function PokeCard(props) {
                 const pokemonData = await response.json();
                 setData(pokemonData);
                 toast.info("Fetched pokemon data from API");
-                console.log("Fetched pokemon data from API");
                 cache[selectedPokemon] = pokemonData;
                 localStorage.setItem("pokedex", JSON.stringify(cache));
             } catch (err) {
@@ -144,7 +140,7 @@ export default function PokeCard(props) {
                     </div>
                     <div>
                         <h6>Description</h6>
-                        <p>{skill?.description}</p>
+                        <p>{skill?.description || "No description found!"}</p>
                     </div>
                 </Modal>
             )}

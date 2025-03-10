@@ -6,9 +6,15 @@ export default function Header(props) {
     return (
         <header>
             <button onClick={() => { handleToggleMenu() }} className="open-nav-button">
-                <i class="fa-solid fa-bars"></i>
+                <div style={{display: "flex"}}>
+                    <div style={{padding: "6px"}}>
+                        <i className="fa-solid fa-bars"></i>
+                    </div>
+                    <div>
+                        <h1 className="text-gradient">Pokédex</h1>
+                    </div>
+                </div>
             </button>
-            <h1 className="text-gradient">Pokédex</h1>
         </header>
     )
 }

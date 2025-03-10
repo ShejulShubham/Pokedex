@@ -13,15 +13,13 @@ function App() {
     setShowSideMenu(!showSideMenu);
   }
 
-  function handleCloseMenu(){
+  function handleCloseMenu() {
     setShowSideMenu(!showSideMenu);
   }
 
   return (
     <>
-      <div>
-        <ToastContainer />
-      </div>
+      <ToastContainer />
       <Header handleToggleMenu={handleToggleMenu} />
       <SideNav
         selectedPokemon={selectedPokemon}

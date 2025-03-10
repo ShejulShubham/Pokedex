@@ -20,13 +20,17 @@ export default function SideNav(props) {
     })
 
     return (
-        <nav className={'' + (!showSideMenu ? "open" : ' ')}>
-            <div className={"header " + (!showSideMenu ? "open" : ' ')}>
-                <button onClick={() => handleToggleMenu()} className="open-nav-button">
-                    <i className="fa-solid fa-arrow-left-long"></i>
-                </button>
-                <h1 className="text-gradient">Pokédex</h1>
-            </div>
+        <nav className={'' + (showSideMenu ? "open" : ' ')}>
+            <button onClick={() => { handleToggleMenu() }} className="open-nav-button">
+                <div style={{display: "flex"}}>
+                    <div style={{padding: "8px"}}>
+                        <i className="fa-solid fa-arrow-left-long"></i>
+                    </div>
+                    <div>
+                        <h1 className="text-gradient">Pokédex</h1>
+                    </div>
+                </div>
+            </button>
             <input placeholder="Eg. 001, Bulb..." name="searchBar" value={searchValue} onChange={(e) => {
                 setSearchValue(e.target.value)
             }} />
