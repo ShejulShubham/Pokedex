@@ -1,3 +1,3 @@
 # Pokédex App
 
-![Screenshot](/public/favicon.ico)
+![Screenshot](/public/pokedex.png)
