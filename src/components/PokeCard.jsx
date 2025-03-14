@@ -3,6 +3,7 @@ import { getFullPokedexNumber, getPokedexNumber } from "../utils";
 import TypeCard from "./TypeCard";
 import Modal from "./Modal";
 import { toast } from "react-fox-toast";
+import Loading from "./Loading";
 
 export default function PokeCard(props) {
     const { selectedPokemon } = props;
@@ -124,9 +125,7 @@ export default function PokeCard(props) {
 
     if (loading || !data) {
         return (
-            <div>
-                <h4>Loading......</h4>
-            </div>
+            <Loading/>
         );
     }
 
